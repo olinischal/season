@@ -1,8 +1,8 @@
 import './SeasonDisplay.css';
 import React from 'react';
 
-const seasonConfig ={    // array method
-    summer: {                  // another array
+const seasonConfig ={   
+    summer: {                  
         text : "Let's hit the beach, Yayy",
         iconName : 'sun'
     },
