@@ -4,20 +4,13 @@ import SeasonDisplay from "./SeasonDisplay";
 import Loader from "./Loader.js";
 
 class App extends React.Component {
-  //constructor is not mandatory; compiler will itself rectify while initializing state without constructor
-  // constructor(props) {
-  //   // calling constructor
-  //   super(props); //super is a reference is a parent of the constructor function and is compulsory
+ 
 
-  //   // this is only time to assign state object directly
-  //   this.state = { lat: null, errorMessage: "" }; //initialize state object
-  // }
-
-  state = { lat: null, errorMessage: "" }; // initialize state
+  state = { lat: null, errorMessage: "" }; 
 
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
-      position => this.setState({ lat: position.coords.latitude }), //setState to update value of state
+      position => this.setState({ lat: position.coords.latitude }), 
 
       error => this.setState({ errorMessage: error.message })
     );
@@ -29,7 +22,7 @@ class App extends React.Component {
     }
 
     if (!this.state.errorMessage && this.state.lat) {
-      return <SeasonDisplay lat={this.state.lat} />; // when you are sending the object from class to class you use state
+      return <SeasonDisplay lat={this.state.lat} />; 
     }
 
     return <Loader message="Please accept location request" />;
